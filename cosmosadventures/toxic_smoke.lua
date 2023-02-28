@@ -3,7 +3,7 @@
 function create_toxic_smoke()
     toxic_smoke={sprite = 82,
                  x = 22,
-                 y = 5}
+                 y = 7}
     toxic_smoke_anim_time = 0
     toxic_smoke_anim_wait = 0.1
 end  
