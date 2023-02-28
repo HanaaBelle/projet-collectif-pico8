@@ -1,10 +1,12 @@
 function create_enemies()
    
-     
+
     enemy={
        
-        x = rnd(18) + 20, 
-        y = rnd(1) + 17,
+        x = flr(rnd(18)) + 20, 
+        y = flr(rnd(1)) + 12,
+
+
         sprite = 119 
         
         }
@@ -25,10 +27,12 @@ function update_enemies()
 end
 
 function draw_enemies()
-   
-    
-    spr(enemy.sprite,enemy.x*8,enemy.y*8,1,1)
 
+      if (player.x == enemy.x and player.y == enemy.y) then
+      
+      print("Too Bad, Game Over",30,8,7) 
+   end
+    spr(enemy.sprite,enemy.x*8,enemy.y*8,1,1)
 
 end
 

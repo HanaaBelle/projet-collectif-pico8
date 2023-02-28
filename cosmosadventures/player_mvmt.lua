@@ -88,7 +88,9 @@ function draw_player()
             player.sprite=3
         end
     end
+     
 end
+
 
 
 

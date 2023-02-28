@@ -32,18 +32,29 @@ function _draw()
    change_color() 
    draw_rocket_fire()
 	draw_toxic_smoke()
+
+   draw_player()
    draw_enemies()
-	draw_player()
+   print(enemy.x,20,20)
+
    draw_ui()
    draw_dialogues() 
+   x,y=30,8
+   z=2
    if player.gems == 6 then
-      local x,y=30,8
-      --local w,z=50,2
+
+      
       --print(dialogue_title,w,z,7)
       print("Congrats! You Won.",x,y,7)
+      rectfill(39,1,39+ #dialogue_title*4,z+6,2)
       sfx(2)
-   elseif (player.x == enemy.x and player.y == enemy.y) then
-      print("Too Bad, Game Over",22,1,7) 
-   
    end
+  if (player.x == enemy.x and player.y == enemy.y) then 
+   --rectfill(39,1,39+ #dialogue_title*4,z+6,2)
+      print("Too Bad, Game Over",x,y,7) 
+      
+  end
 end
+  
+--and (player.x == enemy.x and player.y == enemy.y) 
+
