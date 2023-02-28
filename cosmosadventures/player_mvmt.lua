@@ -3,7 +3,7 @@
 function create_player()
     player={ 
         x = 0, --holds the horizontal position of the player
-        y = 6, --holds the vertical position of the player
+        y = 8, --holds the vertical position of the player
         ox = 0, 
         oy = 0,
         startox=0, 
@@ -27,7 +27,7 @@ function player_movement()
             player.flip = false
 
         elseif (btn(⬅️)) then
-            if (player.x != 16) then
+            if (player.x != 18) then
                 newx -= 1
                 newox = 8
                 player.flip = true
@@ -40,14 +40,16 @@ function player_movement()
             end
 
         elseif (btn(⬇️)) then
+            if player.x > 17 then
             newy += 1
             newoy = -8
+            end
         end
     end
         
     interact(newx,newy)
     
-    if not check_flag(0, newx, newy) and (player.x != newx or player.y != newy) and (player.gems != 6) then
+    if not check_flag(0, newx, newy) and (player.x != newx or player.y != newy) and (player.gems != 6) and (player.x != enemy.x or player.y != enemy.y) then
         --on avance--
         -- vérifie qu'il y a bien déplacement sans obstacle player.x inégal à newx
         -- verifie que la case newx,newy n'est pas un flag, if not flag then ...
@@ -76,21 +78,20 @@ end
 ----------player.speed=15 pourquoi l'avoir déclaré ?
 
 
---function draw_player()
-    --spr(player.anim_t>=0.5 and 10 or 9, player.x*8 + player.ox, player.y*8 + player.oy, 1, 1, player.flip)
-    --spr(player.sprite, player.x*8 + player.ox, player.y*8 + player.oy, 1, 1, player.flip)
---end
 
 function draw_player()
-    spr(player.sprite,player.x*8 +player.ox,player.y*8 +player.oy,1, 1, player.flip) 
+    spr(player.sprite,player.x*8+ player.ox,player.y*8+ player.oy,1, 1, player.flip) 
     
-    if (player.anim_t>=0.7) then 
+    if player.anim_t>=0.7 then 
         player.sprite +=1
-    
-    elseif player.sprite > 7 then 
-        player.sprite=3
+        if player.sprite > 7 then 
+            player.sprite=3
+        end
     end
+     
 end
+
+
 
 
 
