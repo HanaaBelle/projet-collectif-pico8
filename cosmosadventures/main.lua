@@ -32,14 +32,17 @@ function _draw()
    change_color() 
    draw_rocket_fire()
 	draw_toxic_smoke()
+
    draw_player()
    draw_enemies()
    print(enemy.x,20,20)
+
    draw_ui()
    draw_dialogues() 
    x,y=30,8
    z=2
    if player.gems == 6 then
+
       
       --print(dialogue_title,w,z,7)
       print("Congrats! You Won.",x,y,7)
@@ -54,3 +57,4 @@ function _draw()
 end
   
 --and (player.x == enemy.x and player.y == enemy.y) 
+
