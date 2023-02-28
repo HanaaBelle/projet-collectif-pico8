@@ -21,12 +21,17 @@ end
 function draw_dialogues()
     if dialogues[1] then
         local x,y,w,z=30,10,40,2
-        palt(13,true)
+        palt(0,true) -- chgmt du 13 vers la couleur 0
         spr(3,29,2)
         rectfill(39,1,39+ #dialogue_title*4,z+6,2)
         print(dialogue_title,w,z,7)
         print(dialogues[1],x,y,7)
 
         printh('Hello')
+
+        
     end
+
+
+
 end

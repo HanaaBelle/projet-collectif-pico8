@@ -22,8 +22,8 @@ function init_camera()
 end 
 
 function update_camera()
-        camx=mid(0, (player.x-7.5)*8+player.ox, (31-15)*8)
-        camy=mid(0, (player.y-7.5)*8+player.oy, (31-15)*8)
+        camx=mid(0, (player.x-7.5)*8+player.ox, (60-15)*8)
+        camy=mid(0, (player.y-7.5)*8+player.oy, (60-15)*8)
         camera(camx, camy) 
 end
 
